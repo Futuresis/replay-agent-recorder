@@ -1,0 +1,181 @@
+{
+  "candidates": [
+    {
+      "confidence": 0.98,
+      "entry": "langgraph.json#Deep Researcher",
+      "framework": "auto",
+      "graph_name": "Deep Researcher",
+      "kind": "langgraph-json",
+      "metadata": {
+        "graph_ref": "./src/open_deep_research/deep_researcher.py:deep_researcher"
+      },
+      "method": "auto",
+      "reason": "langgraph.json contains a single graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "langgraph.json",
+      "symbol": "deep_researcher"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "legacy.graph:graph",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/legacy/graph.py",
+      "symbol": "graph"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "legacy.multi_agent:graph",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/legacy/multi_agent.py",
+      "symbol": "graph"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "open_deep_research.deep_researcher:supervisor_subgraph",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/open_deep_research/deep_researcher.py",
+      "symbol": "supervisor_subgraph"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "open_deep_research.deep_researcher:researcher_subgraph",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/open_deep_research/deep_researcher.py",
+      "symbol": "researcher_subgraph"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "open_deep_research.deep_researcher:deep_researcher",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/open_deep_research/deep_researcher.py",
+      "symbol": "deep_researcher"
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:src/legacy/tests/run_test.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "src/legacy/tests/run_test.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:tests/extract_langsmith_data.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "tests/extract_langsmith_data.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:tests/run_evaluate.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "tests/run_evaluate.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:tests/supervisor_parallel_evaluation.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "tests/supervisor_parallel_evaluation.py",
+      "symbol": null
+    }
+  ],
+  "detected": {
+    "confidence": 0.98,
+    "entry": "langgraph.json#Deep Researcher",
+    "framework": "both",
+    "graph_name": "Deep Researcher",
+    "kind": "langgraph-json",
+    "metadata": {
+      "graph_ref": "./src/open_deep_research/deep_researcher.py:deep_researcher"
+    },
+    "method": "auto",
+    "reason": "langgraph.json contains a single graph",
+    "requires_factory_config": false,
+    "requires_input": true,
+    "source_path": "langgraph.json",
+    "symbol": "deep_researcher"
+  },
+  "entry": "langgraph.json#Deep Researcher",
+  "entry_kind": "langgraph-json",
+  "framework": "both",
+  "graph": "Deep Researcher",
+  "method": "auto",
+  "requires_factory_config": false,
+  "requires_input": true,
+  "schema_version": 1,
+  "target_root": "../../../open_deep_research"
+}

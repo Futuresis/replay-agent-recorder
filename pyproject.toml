@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "replay-agent-recorder"
+version = "0.1.0"
+description = "Record, replay, fork, and visualize LLM-agent runs."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = ["llm", "agents", "replay", "debugging", "tracing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Debuggers",
+]
+dependencies = [
+    "openai>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Futuresis/replay-agent-recorder"
+Repository = "https://github.com/Futuresis/replay-agent-recorder"
+Issues = "https://github.com/Futuresis/replay-agent-recorder/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pydantic>=2",
+    "pytest>=8",
+]
+
+[project.scripts]
+replay = "replay.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["replay*"]
+exclude = ["replay.tests*"]
+
+[tool.setuptools.package-data]
+replay = [
+    "xyflow_assets/*.css",
+    "xyflow_assets/*.js",
+]
+
+[tool.setuptools.exclude-package-data]
+replay = [
+    "tests/*",
+    "tests/**/*",
+]

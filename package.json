@@ -1,0 +1,17 @@
+{
+  "name": "replay-visualization-viewer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:xyflow-viewer": "vite build --config viewer/vite.config.ts"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^1.1.5",
+    "@vitejs/plugin-react": "6.0.2",
+    "@xyflow/react": "12.10.2",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "typescript": "6.0.3",
+    "vite": "8.0.13"
+  }
+}

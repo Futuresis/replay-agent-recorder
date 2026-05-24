@@ -1,0 +1,163 @@
+{
+  "candidates": [
+    {
+      "confidence": 0.97,
+      "entry": "langgraph.json#agent",
+      "framework": "auto",
+      "graph_name": "agent",
+      "kind": "langgraph-json",
+      "metadata": {
+        "graph_ref": "agent.server:get_agent"
+      },
+      "method": "auto",
+      "reason": "langgraph.json graph named agent",
+      "requires_factory_config": true,
+      "requires_input": true,
+      "source_path": "langgraph.json",
+      "symbol": "get_agent"
+    },
+    {
+      "confidence": 0.88,
+      "entry": "langgraph.json#reviewer",
+      "framework": "auto",
+      "graph_name": "reviewer",
+      "kind": "langgraph-json",
+      "metadata": {
+        "graph_ref": "agent.reviewer:get_reviewer_agent"
+      },
+      "method": "auto",
+      "reason": "langgraph.json auxiliary graph",
+      "requires_factory_config": true,
+      "requires_input": true,
+      "source_path": "langgraph.json",
+      "symbol": "get_reviewer_agent"
+    },
+    {
+      "confidence": 0.82,
+      "entry": "factory:agent.reviewer:get_reviewer_agent",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "factory",
+      "metadata": {
+        "ast_pattern": "factory_function"
+      },
+      "method": "auto",
+      "reason": "get_reviewer_agent(...) returns an agent or compiled graph",
+      "requires_factory_config": true,
+      "requires_input": true,
+      "source_path": "agent/reviewer.py",
+      "symbol": "get_reviewer_agent"
+    },
+    {
+      "confidence": 0.84,
+      "entry": "factory:agent.server:get_agent",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "factory",
+      "metadata": {
+        "ast_pattern": "factory_function"
+      },
+      "method": "auto",
+      "reason": "get_agent(...) returns an agent or compiled graph",
+      "requires_factory_config": true,
+      "requires_input": true,
+      "source_path": "agent/server.py",
+      "symbol": "get_agent"
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:evals/reviewer/build_dataset.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "evals/reviewer/build_dataset.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:evals/reviewer/run_eval.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "evals/reviewer/run_eval.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:guidance/replay/run_open_swe_once.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "guidance/replay/run_open_swe_once.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:scripts/check_pr_merge_status.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "scripts/check_pr_merge_status.py",
+      "symbol": null
+    },
+    {
+      "confidence": 0.5,
+      "entry": "script:scripts/create_sandbox_snapshot.py",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "script",
+      "metadata": {},
+      "method": "call",
+      "reason": "Python file has if __name__ == '__main__'",
+      "requires_factory_config": false,
+      "requires_input": false,
+      "source_path": "scripts/create_sandbox_snapshot.py",
+      "symbol": null
+    }
+  ],
+  "detected": {
+    "confidence": 0.97,
+    "entry": "langgraph.json#agent",
+    "framework": "both",
+    "graph_name": "agent",
+    "kind": "langgraph-json",
+    "metadata": {
+      "graph_ref": "agent.server:get_agent"
+    },
+    "method": "auto",
+    "reason": "langgraph.json graph named agent",
+    "requires_factory_config": true,
+    "requires_input": true,
+    "source_path": "langgraph.json",
+    "symbol": "get_agent"
+  },
+  "entry": "langgraph.json#agent",
+  "entry_kind": "langgraph-json",
+  "framework": "both",
+  "graph": "agent",
+  "method": "auto",
+  "requires_factory_config": true,
+  "requires_input": true,
+  "schema_version": 1,
+  "target_root": "../../../open-swe"
+}
