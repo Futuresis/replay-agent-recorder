@@ -85,7 +85,7 @@ replay/
 test_agent/agent4/          maintained deterministic demo agent
 integrations/               wrapper scaffolds and generated integration examples
 docs/                       user-facing guides
-guidance/visualization/     original visualization notes and quickstart
+docs/architecture/          implementation notes and internal contracts
 viewer/                     React/XYFlow viewer source
 ```
 

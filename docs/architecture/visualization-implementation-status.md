@@ -1,10 +1,14 @@
 # Visualization implementation status
 
+This document describes the current visualization architecture and implementation status of Replay Agent Recorder. It is intended for maintainers and contributors.
+
+For user-facing visualization commands, see [`../visualization.md`](../visualization.md). For the Chinese user guide, see [`../visualization.zh-CN.md`](../visualization.zh-CN.md).
+
+This is not a product roadmap. Workbench/server-backed actions mentioned here are not part of the current static HTML export surface unless explicitly marked as implemented.
+
 ## English
 
-This document captures the implemented state of Replay visualization. It is a
-status document, not a promise that every planned workbench feature exists
-today.
+This document captures the implemented state of Replay visualization. It is a status document, not a promise that every planned workbench feature exists today.
 
 ## Phase 0: Current surface
 

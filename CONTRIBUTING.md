@@ -33,8 +33,8 @@ python -m pytest replay/tests
 For deterministic smoke coverage without a live LLM, use the Agent4 demo:
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --output test_agent/agent4/outputs/record.md
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --output test_agent/agent4/outputs/replay.md
+python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/record.md
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/replay.md
 ```
 
 ## Pull Request Guidelines
@@ -61,3 +61,14 @@ path.
 When documenting examples, assume trace files may include prompts, model
 outputs, tool arguments, tool results, local file paths, diffs, and error
 messages. Keep examples synthetic and safe to publish.
+
+
+## Documentation Structure
+
+The public documentation lives under `README.md`, `README.zh-CN.md`, and `docs/`.
+The old `guidance/` directory has been folded into:
+
+- `docs/visualization.md` for user-facing visualization commands.
+- `docs/architecture/visualization-implementation-status.md` for maintainer-facing visualization implementation notes.
+
+Please do not add new user-facing guides under `guidance/`; keep public docs in `docs/`.

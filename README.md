@@ -24,6 +24,8 @@
   <a href="docs/visualization.md">Visualization</a>
   ·
   <a href="docs/integrations.md">Integrations</a>
+  ·
+  <a href="docs/README.md">Docs</a>
 </p>
 
 ---
@@ -251,7 +253,7 @@ python -m replay graph html .replay/runs/agent4-demo.jsonl --output out/graph.ht
 
 The HTML explorer is static and read-only. It supports search, filters, focus, timeline navigation, node/edge inspection, evidence views, and base/fork diff highlighting.
 
-For the React/XYFlow viewer, install Node dependencies and rebuild the vendored assets:
+For the React/XYFlow viewer, install Node dependencies and rebuild the vendored assets. Bundled viewer dependency notices live in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md):
 
 ```bash
 npm install
@@ -296,13 +298,13 @@ Read the integration model before relying on wrappers in production: [Integratio
 replay/                    framework package and CLI
 test_agent/agent4/          maintained deterministic demo agent
 integrations/               generated and built-in wrapper scaffolds
-docs/                       user guides and reference notes
-guidance/visualization/     original visualization implementation notes
+docs/                       user guides, references, and architecture notes
+docs/architecture/          implementation status and internal contracts
 viewer/                     React/XYFlow viewer source
 replay/xyflow_assets/       bundled viewer assets for package builds
 ```
 
-Deeper implementation notes: [Concepts and architecture](docs/concepts.md) and [Original README details](docs/original-readme-details.md).
+Deeper implementation notes: [Concepts and architecture](docs/concepts.md), [Visualization implementation status](docs/architecture/visualization-implementation-status.md), and [Original README details](docs/original-readme-details.md).
 
 ---
 

@@ -85,7 +85,7 @@ replay/
 test_agent/agent4/          维护中的 deterministic demo agent
 integrations/               wrapper scaffolds 和生成式 integration examples
 docs/                       用户文档
-guidance/visualization/     原始可视化说明和 quickstart
+docs/architecture/          实现说明和内部契约文档
 viewer/                     React/XYFlow viewer 源码
 ```
 

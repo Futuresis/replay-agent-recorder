@@ -83,3 +83,8 @@ Before sharing a trace:
 For vulnerabilities, follow the process in [SECURITY.md](../SECURITY.md).
 
 Do not open a public issue with exploit details, secrets, private traces, or customer data.
+
+
+## Documentation screenshots
+
+Screenshots and GIFs can accidentally leak prompt text, trace ids, local paths, tool arguments, or file diffs. Use the deterministic synthetic Agent4 demo when creating assets under `docs/assets/`.

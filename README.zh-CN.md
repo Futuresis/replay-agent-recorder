@@ -21,9 +21,11 @@
   ·
   <a href="docs/concepts.zh-CN.md">核心概念</a>
   ·
-  <a href="docs/visualization.md">可视化</a>
+  <a href="docs/visualization.zh-CN.md">可视化</a>
   ·
   <a href="docs/integrations.md">集成</a>
+  ·
+  <a href="docs/README.md">文档</a>
 </p>
 
 ---
@@ -296,8 +298,8 @@ python -m replay scaffold integration \
 replay/                    框架包和 CLI
 test_agent/agent4/          维护中的确定性 demo agent
 integrations/               生成式和内置 wrapper scaffold
-docs/                       用户指南和参考说明
-guidance/visualization/     原始可视化实现说明
+docs/                       用户指南、参考说明和架构文档
+docs/architecture/          实现状态和内部契约文档
 viewer/                     React/XYFlow viewer 源码
 replay/xyflow_assets/       package 中携带的 viewer assets
 ```

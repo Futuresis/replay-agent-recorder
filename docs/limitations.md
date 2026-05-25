@@ -36,8 +36,8 @@ These are high-impact improvements for public open-source polish:
 2. Validate `run_id` to prevent path traversal and invalid filenames.
 3. Add subprocess timeouts to tests that spawn CLI commands.
 4. Add `pytest-timeout`, `ruff`, and format checks to CI.
-5. Add `THIRD_PARTY_NOTICES.md` for bundled viewer assets.
-6. Curate integration README files so they show recommended entries instead of long raw auto-detection dumps.
+5. Keep `THIRD_PARTY_NOTICES.md` updated for bundled viewer assets.
+6. Keep integration README files curated so they show recommended entries instead of long raw auto-detection dumps.
 7. Make viewer UI default to English or add i18n.
 8. Add a trace redaction CLI.
 9. Add screenshots or GIFs under `docs/assets/`.

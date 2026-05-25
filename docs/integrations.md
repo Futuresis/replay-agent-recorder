@@ -127,6 +127,7 @@ python integrations/my_agent/runner.py \
 | `integrations/open_deep_research` | experimental | Wrapper for an existing Open Deep Research checkout. |
 | `integrations/open_swe` | experimental | Wrapper for an existing Open SWE checkout. |
 | `integrations/swe_agent` | experimental | Wrapper for SWE-agent-style checkouts. |
+| `integrations/local_deep_researcher` | local experimental | Keep only if this wrapper is intentionally supported; remove it if it was a private experiment. |
 
 Treat built-in wrappers as best-effort until each is validated against pinned upstream versions. Prefer explicit `--entry` values over auto-detected candidates.
 
@@ -161,3 +162,16 @@ Avoid editing `runner.py` for normal script/module/runnable/factory/ASGI targets
 - [Integration Scaffold Guide](integration-scaffold.md)
 - [Tool Adapter Protocol](tool-adapter-protocol.md)
 - [Quickstart](quickstart.md)
+
+
+## README policy for integrations
+
+Each integration directory should keep its README short and decision-oriented:
+
+- current support status;
+- one recommended record/replay command shape;
+- where to put target-specific tool adapter code;
+- validation checklist;
+- link back to this guide.
+
+Do not paste long raw auto-detection tables into integration READMEs. Keep full detection output in `replay_target.json` and document only validated, useful entrypoints.

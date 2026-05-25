@@ -27,7 +27,7 @@ wraps `MAPPING_TOOLS` with `MappingToolAdapter`, wraps
 `test_agent/agent4/sandbox` from `test_agent/agent4/sandbox_base` through
 `replay.managed_sandbox(...)`.
 
-The runner writes JSONL runs under `replay/runs` unless `--log-dir` is supplied.
+For public docs and local development, pass `--log-dir .replay/runs` so JSONL runs stay in a project-local trace directory. If omitted, legacy defaults may write under `replay/runs`.
 The agent writes a Markdown coverage report under `test_agent/agent4/outputs`
 unless `--output` is supplied.
 
@@ -64,8 +64,8 @@ The default replay runner uses the local fake LLM, so it does not need network
 access or real API credits.
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --output test_agent/agent4/outputs/record.md
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --output test_agent/agent4/outputs/replay.md
+python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/record.md
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/replay.md
 ```
 
 The replay should regenerate the same report content and sandbox state without
@@ -80,7 +80,7 @@ python - <<'PY'
 import json
 from pathlib import Path
 
-for line in Path("replay/runs/agent4-demo.jsonl").read_text(encoding="utf-8").splitlines():
+for line in Path(".replay/runs/agent4-demo.jsonl").read_text(encoding="utf-8").splitlines():
     item = json.loads(line)
     if item.get("kind") == "llm":
         print(item["record_uid"], item["path_id"], item["output"].get("content"))
@@ -90,19 +90,19 @@ PY
 Replace an assistant response with plain text:
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-output "manual seed override" --fork-run agent4-demo-fork --output test_agent/agent4/outputs/fork.md
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-output "manual seed override" --fork-run agent4-demo-fork --output test_agent/agent4/outputs/fork.md
 ```
 
 Patch the OpenAI input kwargs and run that breakpoint call live:
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-input-json "{\"messages\":[{\"role\":\"user\",\"content\":\"patched seed prompt\"}]}" --fork-run agent4-demo-input-fork
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-input-json "{\"messages\":[{\"role\":\"user\",\"content\":\"patched seed prompt\"}]}" --fork-run agent4-demo-input-fork
 ```
 
 Patch the first assistant message:
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-message-json "{\"content\":\"manual assistant content\"}" --fork-run agent4-demo-message-fork
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-message-json "{\"content\":\"manual assistant content\"}" --fork-run agent4-demo-message-fork
 ```
 
 The override modes are mutually exclusive. Fork records are written to the
@@ -114,7 +114,7 @@ chosen `--fork-run` name or, if omitted, to the next
 Use `--real-llm` to call the configured OpenAI-compatible endpoint from `.env`:
 
 ```bash
-python -m test_agent.agent4.replay_runner --real-llm --mode record --run-id agent4-real
+python -m test_agent.agent4.replay_runner --real-llm --mode record --run-id agent4-real --log-dir .replay/runs
 ```
 
 Copy the repository-root `.env.example` to `.env` and fill in:
@@ -181,8 +181,7 @@ instrumentation 限制到 `test_agent/agent4`，用 `MappingToolAdapter` 包装 
 `replay.managed_sandbox(...)` 从 `test_agent/agent4/sandbox_base` 重置
 `test_agent/agent4/sandbox`。
 
-除非传入 `--log-dir`，runner 会把 JSONL run 写入 `replay/runs`。除非传入 `--output`，
-Agent 会把 Markdown coverage report 写入 `test_agent/agent4/outputs`。
+公开文档和本地开发中，建议传入 `--log-dir .replay/runs`，让 JSONL run 写入项目本地 trace 目录。若省略，旧默认值可能写入 `replay/runs`。除非传入 `--output`，Agent 会把 Markdown coverage report 写入 `test_agent/agent4/outputs`。
 
 ## 环境准备
 
@@ -215,8 +214,8 @@ npm run build:xyflow-viewer
 默认 replay runner 使用本地 fake LLM，所以不需要网络访问或真实 API 额度。
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --output test_agent/agent4/outputs/record.md
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --output test_agent/agent4/outputs/replay.md
+python -m test_agent.agent4.replay_runner --mode record --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/record.md
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --output test_agent/agent4/outputs/replay.md
 ```
 
 replay 应该在不调用 live workspace tools 处理已记录工具效果的情况下，重新生成相同报告内容和
@@ -231,7 +230,7 @@ python - <<'PY'
 import json
 from pathlib import Path
 
-for line in Path("replay/runs/agent4-demo.jsonl").read_text(encoding="utf-8").splitlines():
+for line in Path(".replay/runs/agent4-demo.jsonl").read_text(encoding="utf-8").splitlines():
     item = json.loads(line)
     if item.get("kind") == "llm":
         print(item["record_uid"], item["path_id"], item["output"].get("content"))
@@ -241,19 +240,19 @@ PY
 把 assistant response 替换为普通文本：
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-output "manual seed override" --fork-run agent4-demo-fork --output test_agent/agent4/outputs/fork.md
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-output "manual seed override" --fork-run agent4-demo-fork --output test_agent/agent4/outputs/fork.md
 ```
 
 patch OpenAI input kwargs，并让该断点调用 live 执行：
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-input-json "{\"messages\":[{\"role\":\"user\",\"content\":\"patched seed prompt\"}]}" --fork-run agent4-demo-input-fork
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-input-json "{\"messages\":[{\"role\":\"user\",\"content\":\"patched seed prompt\"}]}" --fork-run agent4-demo-input-fork
 ```
 
 patch 第一个 assistant message：
 
 ```bash
-python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --breakpoint-record-uid rec_000001 --override-message-json "{\"content\":\"manual assistant content\"}" --fork-run agent4-demo-message-fork
+python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --log-dir .replay/runs --breakpoint-record-uid rec_000001 --override-message-json "{\"content\":\"manual assistant content\"}" --fork-run agent4-demo-message-fork
 ```
 
 这些 override 模式互斥。Fork 记录会写入指定的 `--fork-run` 名称；如果省略，则写入下一个
@@ -264,7 +263,7 @@ python -m test_agent.agent4.replay_runner --mode replay --run-id agent4-demo --b
 使用 `--real-llm` 可以调用 `.env` 中配置的 OpenAI-compatible endpoint：
 
 ```bash
-python -m test_agent.agent4.replay_runner --real-llm --mode record --run-id agent4-real
+python -m test_agent.agent4.replay_runner --real-llm --mode record --run-id agent4-real --log-dir .replay/runs
 ```
 
 把仓库根目录的 `.env.example` 复制为 `.env`，并填写：
