@@ -828,21 +828,6 @@ HTML explorer 是只读的，并且可以离线打开。它支持搜索、过滤
 
 ### 示例 Agent
 
-Agent1：纯 LLM 故事工作流。
-
-```bash
-```
-
-Agent2：LLM 加本地项目评审工具。
-
-```bash
-```
-
-Agent3：LLM 加类似 MCP 的沙箱文件工具。
-
-```bash
-```
-
 Agent4：确定性的综合 fake-LLM 工作流。
 
 ```bash

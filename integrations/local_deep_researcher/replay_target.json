@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "confidence": 0.98,
+      "entry": "langgraph.json#ollama_deep_researcher",
+      "framework": "auto",
+      "graph_name": "ollama_deep_researcher",
+      "kind": "langgraph-json",
+      "metadata": {
+        "graph_ref": "./src/ollama_deep_researcher/graph.py:graph"
+      },
+      "method": "auto",
+      "reason": "langgraph.json contains a single graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "langgraph.json",
+      "symbol": "graph"
+    },
+    {
+      "confidence": 0.8,
+      "entry": "ollama_deep_researcher.graph:graph",
+      "framework": "auto",
+      "graph_name": null,
+      "kind": "runnable",
+      "metadata": {
+        "ast_pattern": "compiled_graph_assignment"
+      },
+      "method": "auto",
+      "reason": "module-level assignment to .compile() looks like a compiled LangGraph graph",
+      "requires_factory_config": false,
+      "requires_input": true,
+      "source_path": "src/ollama_deep_researcher/graph.py",
+      "symbol": "graph"
+    }
+  ],
+  "detected": {
+    "confidence": 0.98,
+    "entry": "langgraph.json#ollama_deep_researcher",
+    "framework": "both",
+    "graph_name": "ollama_deep_researcher",
+    "kind": "langgraph-json",
+    "metadata": {
+      "graph_ref": "./src/ollama_deep_researcher/graph.py:graph"
+    },
+    "method": "auto",
+    "reason": "langgraph.json contains a single graph",
+    "requires_factory_config": false,
+    "requires_input": true,
+    "source_path": "langgraph.json",
+    "symbol": "graph"
+  },
+  "entry": "langgraph.json#ollama_deep_researcher",
+  "entry_kind": "langgraph-json",
+  "framework": "both",
+  "graph": "ollama_deep_researcher",
+  "method": "auto",
+  "requires_factory_config": false,
+  "requires_input": true,
+  "schema_version": 1,
+  "target_root": "../../../local-deep-researcher"
+}
